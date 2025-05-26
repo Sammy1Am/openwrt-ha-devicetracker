@@ -1,0 +1,21 @@
+config global 'settings'
+	option enabled '1'  # Master switch for the entire tracker
+	option ha_url 'http://192.168.1.10:8123'
+	option ha_token '<APITOKEN>'
+	option hostapd_ifaces 'hostapd.phy0-ap0 hostapd.phy0-ap1' # Check `ubus list` command for your specific ifaces
+	option debug '0' # Set to 1 for verbose logging
+
+config device
+	option enabled '1' # Enable/disable tracking for this specific device
+	option mac 'AA:AA:AA:AA:AA:AA' # MAC address of the first device
+	option name 'sam_phone'   # Home Assistant device_tracker ID (e.g., john_phone)
+
+config device
+	option enabled '1'
+	option mac 'BB:BB:BB:BB:BB:BB' # MAC address of the second device
+	option name 'second_phone'   # (e.g., jane_phone)
+
+config device
+	option enabled '0' # This device is configured but currently disabled for tracking
+	option mac 'CC:CC:CC:CC:CC:CC'
+	option name 'tablet_one_dev_id'
