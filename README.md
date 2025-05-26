@@ -21,3 +21,4 @@ Although Home Assistant already has [an official ubus integration](https://www.h
 ## Additional Notes
 - You can enable debug logging in the config file to get some output in the syslog which might be helpful for troubleshooting.
 - It's not strictly necessary (I don't think) to filter the devices by MAC address.  This script could be modified to report *all* associations and disassociations for an AP.
+- There is not currently a periodic-check component of this service. This means if a device connects or disconnected while either the service or HA are not running, its status will not be properly updated. Would like to eventually add that though; PRs welcome!
